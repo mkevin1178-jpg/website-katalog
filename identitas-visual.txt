@@ -1,0 +1,9 @@
+PALET-WARNA
+- #FFAE03
+- #B01F24
+- #9F1C21
+- #FFFFFF
+
+FONT
+- nunito
+- quicksand
