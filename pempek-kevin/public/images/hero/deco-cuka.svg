@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <!-- TODO: ganti dengan foto cut-out mangkuk cuka asli -->
+  <ellipse cx="150" cy="266" rx="96" ry="16" fill="#B01F24" opacity="0.15"/>
+  <path d="M60 150h180a90 90 0 0 1-90 108 90 90 0 0 1-90-108Z" fill="#FFFFFF" stroke="#D4D4D8" stroke-width="6"/>
+  <ellipse cx="150" cy="150" rx="90" ry="26" fill="#F4F4F5" stroke="#D4D4D8" stroke-width="6"/>
+  <ellipse cx="150" cy="150" rx="72" ry="19" fill="#5B2B12"/>
+  <path d="M150 60c14 0 24 12 22 26l-8 44h-28l-8-44c-2-14 8-26 22-26Z" fill="#B01F24"/>
+  <rect x="144" y="44" width="12" height="34" rx="6" fill="#4F7A3A"/>
+</svg>

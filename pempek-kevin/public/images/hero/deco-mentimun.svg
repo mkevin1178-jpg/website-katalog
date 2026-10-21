@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <!-- TODO: ganti dengan foto cut-out potongan mentimun asli -->
+  <g>
+    <circle cx="118" cy="170" r="74" fill="#8FBF4D"/>
+    <circle cx="118" cy="170" r="56" fill="#DFF3C0"/>
+    <circle cx="118" cy="170" r="18" fill="#8FBF4D"/>
+    <g fill="#8FBF4D">
+      <ellipse cx="118" cy="128" rx="8" ry="14"/>
+      <ellipse cx="152" cy="156" rx="14" ry="8"/>
+      <ellipse cx="118" cy="204" rx="8" ry="14"/>
+      <ellipse cx="84" cy="170" rx="14" ry="8"/>
+    </g>
+  </g>
+  <g>
+    <circle cx="216" cy="122" r="54" fill="#8FBF4D"/>
+    <circle cx="216" cy="122" r="40" fill="#DFF3C0"/>
+    <circle cx="216" cy="122" r="13" fill="#8FBF4D"/>
+  </g>
+</svg>

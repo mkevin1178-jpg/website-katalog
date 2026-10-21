@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="720" viewBox="0 0 900 720" role="img" aria-label="Ilustrasi pempek khas Palembang">
+  <rect width="900" height="720" rx="32" fill="#FDF3DF"/>
+  <circle cx="450" cy="300" r="230" fill="#FFAE03" opacity="0.25"/>
+  <ellipse cx="450" cy="520" rx="320" ry="36" fill="#B01F24" opacity="0.12"/>
+  <g>
+    <ellipse cx="450" cy="360" rx="180" ry="120" fill="#E9A23B"/>
+    <ellipse cx="450" cy="350" rx="150" ry="96" fill="#F2B85C"/>
+    <ellipse cx="450" cy="340" rx="70" ry="46" fill="#D98B2B"/>
+    <path d="M300 330c40-60 260-60 300 0" stroke="#B01F24" stroke-width="10" fill="none" opacity="0.4" stroke-linecap="round"/>
+  </g>
+  <circle cx="260" cy="200" r="26" fill="#B01F24"/>
+  <circle cx="640" cy="180" r="18" fill="#FFAE03"/>
+  <circle cx="680" cy="470" r="22" fill="#B01F24" opacity="0.7"/>
+  <text x="450" y="640" text-anchor="middle" font-family="Quicksand, Nunito, sans-serif" font-size="44" font-weight="700" fill="#9F1C21">Pempek Palembang</text>
+  <text x="450" y="686" text-anchor="middle" font-family="Nunito, sans-serif" font-size="28" fill="#9F1C21" opacity="0.75">Ikan segar • resep keluarga</text>
+</svg>

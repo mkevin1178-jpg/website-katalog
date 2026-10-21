@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <!-- TODO: ganti dengan foto cut-out cabai rawit asli -->
+  <g transform="rotate(-18 150 160)">
+    <path d="M150 70c16 0 26 14 24 32l-10 106c-2 20-16 34-32 34s-28-14-26-34l10-106c2-18 18-32 34-32Z" fill="#D92B2B"/>
+    <path d="M150 88c10 0 17 9 15 21l-7 78c-1 13-10 22-21 22" fill="#F04A4A"/>
+    <rect x="141" y="42" width="18" height="36" rx="9" fill="#4F7A3A"/>
+    <path d="M150 42c12-10 30-12 44-4" stroke="#4F7A3A" stroke-width="10" fill="none" stroke-linecap="round"/>
+  </g>
+  <g transform="rotate(24 90 210)">
+    <path d="M90 140c14 0 23 12 21 28l-8 76c-2 17-14 30-28 30s-25-13-23-30l8-76c2-16 16-28 30-28Z" fill="#C41F24"/>
+    <rect x="82" y="116" width="16" height="30" rx="8" fill="#4F7A3A"/>
+  </g>
+</svg>

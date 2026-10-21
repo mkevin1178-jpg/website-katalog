@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" role="img" aria-label="Logo Pempek Kevin">
+  <circle cx="40" cy="40" r="40" fill="#B01F24"/>
+  <circle cx="40" cy="40" r="31" fill="none" stroke="#FFAE03" stroke-width="3"/>
+  <text x="40" y="41" text-anchor="middle" dominant-baseline="central" font-family="Quicksand, Nunito, sans-serif" font-size="30" font-weight="700" fill="#FFFFFF">PK</text>
+</svg>
