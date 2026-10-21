@@ -7,8 +7,9 @@ ada fase yang dikerjakan. Teman: `WORKFLOW.md` (strategi) dan `DESIGN.md` (landa
 
 ## Status Terakhir
 
-> **Sesi 1 — SELESAI (Fase 0 + 1 + 2 + 3 + 4 + 5):** project sukses di-scaffold,
-> seluruh halaman jadi, lint & build bersih. Tinggal QA manual (Fase 6) di sesi berikutnya.
+> **Sesi 3 — SELESAI (Redesign v3, `DESIGN (3).md` menang):** hero 2 kolom, urutan
+> section homepage baru, pencarian produk berfungsi (navbar + /produk), About &
+> Galeri preview di homepage, nav 4 link. Lint & build bersih (26 halaman static).
 
 ## 1. Instruksi Awal (Prompt 0 — mode Plan)
 
@@ -103,6 +104,56 @@ File yang direncanakan: struktur folder mengikuti `WORKFLOW.md` §6.
 - `npm run lint` → ✅ no warnings/errors
 - `npm run build` → ✅ 21 halaman ter-prerender (○ static / ● SSG)
 
+### Sesi 2 — 20 Okt 2026 (Redesign Layout v2)
+
+Sumber kebenaran: `DESIGN (2).md` (v2) + `WORKFLOW (1).md` (v2). Palet, font,
+route, slug, dan struktur data tidak berubah.
+
+| Commit | Isi |
+|---|---|
+| `5a0eaa4` | Sinkronisasi data produk/galeri/metadata (pra-sesi) |
+| `daded1e` | Langkah 1 — `brand-cream #FFF6E3`, `fontImpact`, `.heading-impact`, Nunito 900 |
+| `abc3170` | Langkah 2 — `Button` pill (6 varian, 3 ukuran), `SectionTitle`, `BlobPattern`; `/tentang` dimigrasi |
+| `7afdbcc` | Langkah 3 — Navbar sticky link-tengah + search, Footer pill sosial terpisah, float ikon gelap |
+| `f8a7b82` | Langkah 4 — Landing v2: `Hero` raksasa, `CategoryTabs` (link+filter), `FeaturedBento`, `StoryBento`, `BenefitsPanel`, `CtaBanner`; komponen lama dihapus; 9 SVG placeholder `public/images/hero/` |
+| `1f33c10` | Langkah 5 — `ProductCard` krem + pill, `ProductGrid` 2/3 kolom, detail impact + bingkai 3xl |
+| `25df2ce` | Langkah 6 — `PageHeader` impact + krem; tentang/galeri/lokasi konsisten v2 |
+
+**Keputusan yang dicatat**
+- Keunggulan "Pelanggan dari Berbagai Daerah" didrop (DESIGN §8: panel 3 baris).
+- Tile landing pakai `<Link>` (tanpa `aria-pressed`); `aria-pressed` hanya di mode filter.
+- `?kategori=` dibaca via `useSearchParams` dalam `<Suspense` sehingga `/produk` tetap static.
+- Satu-satunya `next/image priority` di landing = foto hero (logo Navbar tanpa priority).
+
+**Verifikasi Langkah 1–6**
+- `npm run lint` → ✅ no warnings/errors
+- `npm run build` → ✅ 26 halaman (○ static / ● SSG), `/produk` tetap static
+
+### Sesi 3 — 20 Okt 2026 (Redesign v3)
+
+Sumber kebenaran: **`DESIGN (3).md`** (v3 — menang atas v1/v2). Foto asli pertama
+terpasang: `public/images/20250903_111800.jpg` → `assets.story`.
+
+| Commit | Isi |
+|---|---|
+| `8538e00` | Redesign v3 penuh |
+
+**Perubahan besar v3 vs v2**
+- Homepage order: Hero → FeaturedBento ("Yang Paling Dicari") → CategoryShowcase
+  ("Pilih Kategori Favoritmu") → CtaBanner ("Pesan Sekarang, Lebih Mudah!") →
+  AboutPreview → GalleryPreview ("Momen di Balik Kelezatan").
+- `StoryBento` & `BenefitsPanel` dihapus (tidak ada di struktur v3).
+- Hero: layout 2 kolom desktop (teks kiri, foto kanan dalam bingkai rounded-3xl);
+  ornamen hanya desktop.
+- Navbar/Footer: 4 link (Beranda, Produk, Tentang Kami, Kontak→/lokasi).
+- Search berfungsi: IconButton + form di navbar → `/produk?q=...`;
+  `SearchInput` + `ProductCatalog` (search + filter kategori gabungan,
+  `aria-live` status hasil) di /produk.
+- Komponen baru: `SearchInput`, `IconButton`, `CategoryShowcase`,
+  `AboutPreview`, `GalleryPreview`, `ProductCatalog`.
+- `CategoryTabs` direfactor jadi presentational (active + onSelect).
+- ProductCard: label "Lihat Detail", foto `object-cover`.
+
 ## 5. QA & Catatan (untuk sesi berikutnya)
 
 - [ ] `npm run dev`, cek manual di browser (360/768/1280px)
@@ -123,6 +174,7 @@ File yang direncanakan: struktur folder mengikuti `WORKFLOW.md` §6.
 8. **Harga & deskripsi produk** — `data/products.ts` (harga dummy saat ini)
 9. **`og-image.png`** — `public/images/` (untuk Open Graph, 1200×630)
 10. **Sosial media** — `data/site.ts` → `social.*`
+11. **Foto hero/dekorasi/CTA** — `public/images/hero/` (9 SVG placeholder, path di `data/site.ts` → `assets.*`; cut-out transparan WebP/PNG)
 
 ## 7. Aturan Main ke Depan
 

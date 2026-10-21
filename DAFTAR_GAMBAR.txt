@@ -1,0 +1,151 @@
+================================================================================
+DAFTAR GAMBAR YANG DIBUTUHKAN — WEBSITE KATALOG PEMPEK KEVIN
+================================================================================
+Disesuaikan dengan: DESIGN (3).md (v3) — sumber kebenaran UI.
+Dibuat : 20 Okt 2026 (revisi v3)
+Folder : pempek-kevin/public/images/
+Catatan: File .svg yang ada saat ini hanya PLACEHOLDER sementara.
+         Ganti dengan foto asli. Path file dikontrol di data/site.ts,
+         data/products.ts, data/gallery.ts — jangan rename sembarangan.
+
+TIPS UMUM
+---------
+- Foto produk / galeri   : JPG atau WebP, rasio persegi (1:1), min. 800x800 px
+- Foto hero / tentang    : JPG biasa, rasio 3:2 atau 4:3 (ditampilkan dalam
+                           bingkai rounded-3xl, TIDAK perlu transparan)
+- Ornamen / cut-out CTA  : PNG atau WebP TRANSPARAN (background dihapus)
+- Ukuran file ideal      : 100-500 KB per foto (kompres di squoosh.app /
+                           tinypng.com). JANGAN upload file mentah HP (>2 MB).
+- Nama file              : huruf kecil, pakai tanda minus, tanpa spasi
+                            (contoh: kapal-selam-jumbo.jpg)
+
+================================================================================
+A. HOMEPAGE — HERO (data/site.ts → assets.hero / heroDecorations)
+================================================================================
+Sesuai DESIGN v3 §6.1: foto di sisi kanan desktop, dalam bingkai rounded-3xl
+(aspek 3:2, object-cover). Jadi foto biasa (JPG) sudah cukup — tidak wajib
+cut-out transparan.
+
+1. hero-foto.jpg                   [foto biasa, rasio 3:2]
+   Foto andalan: aneka pempek di atas piring, pencahayaan terang.
+   Ukuran: min. 1200x800 px. Ganti: /images/hero/hero-cutout.svg
+   (Nama file bebas, yang penting update path di data/site.ts → assets.hero)
+
+2. deco-cuka.png                   [cut-out transparan, kecil]
+   Foto/mangkuk kecil cuko. Ukuran: 300x300 px. Hanya tampil di desktop.
+   Ganti: /images/hero/deco-cuka.svg
+
+3. deco-cabai.png                  [cut-out transparan, kecil]
+   Buah cabai merah. Ukuran: 300x300 px.
+   Ganti: /images/hero/deco-cabai.svg
+
+4. deco-mentimun.png               [cut-out transparan, kecil]
+   Irisan/timun. Ukuran: 300x300 px.
+   Ganti: /images/hero/deco-mentimun.svg
+
+================================================================================
+B. HOMEPAGE — SECTION TENTANG KAMI (data/site.ts → assets.story)
+================================================================================
+Sesuai DESIGN v3 §6.5: foto di sisi kanan, bingkai rounded-3xl, rasio 4:3.
+Dipakai juga di halaman /tentang.
+
+5. foto-tentang.jpg                [foto biasa, rasio 4:3]
+   SUDAH ADA SEBAGIAN: /images/20250903_111800.jpg (terpasang 20 Okt 2026).
+   Boleh diganti foto tim/owner atau suasana dapur yang lebih tajam.
+   Ukuran: min. 1200x900 px.
+
+================================================================================
+C. HOMEPAGE — BANNER CTA (data/site.ts → assets.ctaLeft / ctaRight)
+================================================================================
+Sesuai DESIGN v3 §6.4: cut-out di sisi kiri/kanan banner, sebagian keluar
+tepi kartu. Satu sisi disembunyikan di mobile.
+
+6. cta-kiri.png                    [cut-out transparan]
+   Foto cut-out pempek / tangan memegang pempek. Ukuran: 400x400 px.
+   Ganti: /images/hero/cta-kiri.svg
+
+7. cta-kanan.png                   [cut-out transparan]
+   Cut-out lain (mis. cuko / piring pempek). Ukuran: 400x400 px.
+   Ganti: /images/hero/cta-kanan.svg
+
+================================================================================
+D. PRODUK (data/products.ts → image, 15 file)
+================================================================================
+Sesuai DESIGN v3 §7.1: foto 1:1 object-cover di kartu (bg krem) dan halaman
+detail. Latar polos/bersih, pencahayaan konsisten.
+Simpan di: public/images/products/<nama-slug>.jpg
+Lalu ubah field `image` tiap produk di data/products.ts.
+
+KATEGORI PEMPEK SIGNATURE:
+8.  kapal-selam-jumbo.jpg   (Kapal Selam Jumbo — isi telur)
+9.  lenjer-jumbo.jpg
+10. selam-mini.jpg
+11. lenjer.jpg
+12. adaan.jpg               (digoreng, bulat)
+13. kulit-crispy.jpg
+
+KATEGORI PAKET PEMPEK:
+14. paket-keluarga.jpg      (slug: paket-keluarga-20-pcs)
+15. paket-serbu.jpg         (slug: paket-serbu-10-pcs)
+16. paket-mini.jpg          (slug: paket-mini-5-pcs)
+
+KATEGORI KULINER KHAS PALEMBANG:
+17. lenggang.jpg
+18. rujak-mie.jpg
+19. tekwan.jpg
+20. model.jpg
+
+KATEGORI FROZEN FOOD:
+21. paket-frozen-serbu.jpg
+22. paket-frozen-mini.jpg
+
+================================================================================
+E. GALERI (data/gallery.ts → src, 8 item)
+================================================================================
+Sesuai DESIGN v3 §6.6/§8.4: 6 foto pertama tampil di homepage
+(GalleryPreview + lightbox), semua 8 tampil di halaman /galeri.
+Foto 1:1, min. 800x800 px. Simpan di: public/images/gallery/
+Lalu ganti `src` tiap item di data/gallery.ts.
+
+23. galeri-01-proses.jpg        (proses pembuatan pempek)
+24. galeri-02-kapal-selam.jpg   (kapal selam jumbo siap saji)
+25. galeri-03-ikan.jpg          (penggilingan / ikan segar)
+26. galeri-04-lenjer.jpg
+27. galeri-05-goreng.jpg        (proses penggorengan adaan)
+28. galeri-06-cuko.jpg          (kuah cuko)
+29. galeri-07-packing.jpg       (packing pesanan)
+30. galeri-08-kirim.jpg         (paket siap dikirim)
+
+================================================================================
+F. HALAMAN TENTANG (app/tentang/page.tsx — masih hardcode)
+================================================================================
+31. profil-usaha.jpg            [foto biasa, rasio 4:3]
+    Foto owner/tim atau tampak depan usaha. Saat ini masih hardcode ke
+    /images/gallery/placeholder.svg (app/tentang/page.tsx, baris 77).
+    Ganti path-nya setelah foto ada (boleh pakai foto yang sama dengan butir 5).
+
+================================================================================
+G. IKON & SHARING
+================================================================================
+32. logo.svg / logo.png         [SUDAH ADA — masih placeholder]
+    Logo/wordmark resmi Pempek Kevin (DESIGN v3 §5: wordmark merah).
+    Dipakai Navbar, Footer, dan favicon. Rasio persegi ideal.
+    Ganti: /images/logo.svg
+
+33. og-image.png                [BELUM ADA — WAJIB sebelum deploy]
+    Gambar Open Graph (share ke WhatsApp/Facebook), DESIGN v3 §14.
+    Ukuran TEPAT 1200x630 px. Isi: logo + foto pempek + nama usaha.
+    Simpan: public/images/og-image.png
+
+================================================================================
+CHECKLIST RINGKAS (copy-paste)
+================================================================================
+[ ] 1 foto hero (3:2) + 3 ornamen transparan (cuka, cabai, mentimun)
+[ ] 1 foto tentang (4:3) — 20250903_111800.jpg sudah boleh dipakai
+[ ] 2 cut-out CTA kiri & kanan (transparan)
+[ ] 15 foto produk (1:1)
+[ ] 8 foto galeri (1:1)
+[ ] 1 foto halaman Tentang (boleh sama dengan foto tentang)
+[ ] logo asli
+[ ] og-image.png (1200x630)
+[ ] Kompres semua foto sebelum upload
