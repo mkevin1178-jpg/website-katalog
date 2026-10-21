@@ -11,7 +11,7 @@ export const site = {
     "Pempek Kevin homemade khas Palembang di Bogor sejak 2009. Dibuat dari ikan tenggiri pilihan, pengiriman hingga Australia, Oman, dan Qatar.",
   foundedYear: FOUNDED_YEAR,
   foundedDate: "2009-02-12",
-  url: "https://pempek-kevin.vercel.app",
+  url: "https://website-katalog-2.vercel.app",
 
   // Nomor WhatsApp resmi (format internasional tanpa "+", contoh: 628512xxxxxxx).
   // Bisa dioverride lewat env var NEXT_PUBLIC_WA_NUMBER (lihat .env.example).
