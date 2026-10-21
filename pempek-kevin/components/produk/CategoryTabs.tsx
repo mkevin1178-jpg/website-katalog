@@ -9,7 +9,7 @@ export type FilterValue = "semua" | ProductCategory;
 type Tile = { value: FilterValue; label: string; image: string };
 
 const tiles: Tile[] = [
-  { value: "semua", label: "Semua", image: allCategoryImage },
+  { value: "semua", label: "Semua Menu", image: allCategoryImage },
   ...categories.map((category) => ({
     value: category.value,
     label: category.label,
@@ -34,7 +34,7 @@ export default function CategoryTabs({
     <div
       role="group"
       aria-label="Filter kategori produk"
-      className="flex snap-x gap-3 overflow-x-auto pb-2 md:grid md:grid-cols-5 md:overflow-visible md:pb-0"
+      className="flex snap-x gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-5 md:overflow-visible md:pb-0"
     >
       {tiles.map((tile) => {
         const isActive = active === tile.value;

@@ -4,9 +4,12 @@ import ProductCard from "@/components/produk/ProductCard";
 export default function ProductGrid({
   products,
   className = "",
+  priorityCount = 0,
 }: {
   products: Product[];
   className?: string;
+  /** Jumlah gambar pertama yang dimuat prioritas (di atas lipatan). */
+  priorityCount?: number;
 }) {
   if (products.length === 0) {
     return (
@@ -18,10 +21,14 @@ export default function ProductGrid({
 
   return (
     <div
-      className={`grid grid-cols-2 gap-4 lg:grid-cols-3 ${className}`}
+      className={`grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 lg:gap-5 ${className}`}
     >
-      {products.map((product) => (
-        <ProductCard key={product.slug} product={product} />
+      {products.map((product, index) => (
+        <ProductCard
+          key={product.slug}
+          product={product}
+          priority={index < priorityCount}
+        />
       ))}
     </div>
   );

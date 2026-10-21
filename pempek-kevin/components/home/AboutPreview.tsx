@@ -16,9 +16,16 @@ export default function AboutPreview() {
             <h2 className="heading-impact text-2xl leading-tight text-brand-red text-balance md:text-3xl">
               {site.aboutSection.title}
             </h2>
-            <p className="text-pretty text-sm leading-relaxed text-neutral-600 md:text-base">
-              {site.story.paragraphs[0]}
-            </p>
+            <div className="space-y-3 text-center md:text-left">
+              {site.story.paragraphs.map((paragraph) => (
+                <p
+                  key={paragraph}
+                  className="text-pretty text-sm leading-relaxed text-neutral-600 md:text-base"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
             <div className="pt-2">
               <Button href="/tentang" variant="primary" size="md">
                 {site.story.ctaLabel}

@@ -50,7 +50,7 @@ Sesuai DESIGN v3 §6.5: foto di sisi kanan, bingkai rounded-3xl, rasio 4:3.
 Dipakai juga di halaman /tentang.
 
 5. foto-tentang.jpg                [foto biasa, rasio 4:3]
-   SUDAH ADA SEBAGIAN: /images/20250903_111800.jpg (terpasang 20 Okt 2026).
+   SUDAH ADA SEBAGIAN: /images/20250903_111800.webp (terpasang 20 Okt 2026).
    Boleh diganti foto tim/owner atau suasana dapur yang lebih tajam.
    Ukuran: min. 1200x900 px.
 
@@ -131,6 +131,8 @@ G. IKON & SHARING
     Logo/wordmark resmi Pempek Kevin (DESIGN v3 §5: wordmark merah).
     Dipakai Navbar, Footer, dan favicon. Rasio persegi ideal.
     Ganti: /images/logo.svg
+    (File raster yang sudah ada: /images/logo-pempek-kevin.webp — hasil konversi
+     dari PNG asli. Kalau mengganti, pakai .webp dan jalankan script konversi.)
 
 33. og-image.png                [BELUM ADA — WAJIB sebelum deploy]
     Gambar Open Graph (share ke WhatsApp/Facebook), DESIGN v3 §14.
@@ -141,7 +143,7 @@ G. IKON & SHARING
 CHECKLIST RINGKAS (copy-paste)
 ================================================================================
 [ ] 1 foto hero (3:2) + 3 ornamen transparan (cuka, cabai, mentimun)
-[ ] 1 foto tentang (4:3) — 20250903_111800.jpg sudah boleh dipakai
+[ ] 1 foto tentang (4:3) — 20250903_111800.webp sudah boleh dipakai
 [ ] 2 cut-out CTA kiri & kanan (transparan)
 [ ] 15 foto produk (1:1)
 [ ] 8 foto galeri (1:1)
@@ -149,3 +151,6 @@ CHECKLIST RINGKAS (copy-paste)
 [ ] logo asli
 [ ] og-image.png (1200x630)
 [ ] Kompres semua foto sebelum upload
+[ ] Jalankan `npm run convert:images` untuk mengubah JPG/PNG baru jadi WebP
+    (file .png/.jpg asli DIHAPUS oleh script — pastikan path di data/site.ts,
+    data/products.ts, dan data/gallery.ts sudah diubah ke .webp)

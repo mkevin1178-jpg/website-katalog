@@ -14,6 +14,7 @@ import {
 import { formatRupiah } from "@/lib/format";
 import { site } from "@/data/site";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
+import { pageMetadata } from "@/lib/metadata";
 
 type Params = { slug: string };
 
@@ -27,21 +28,18 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
     return { title: "Produk tidak ditemukan" };
   }
 
-  const title = product.name;
-  const description = product.description;
-
-  return {
-    title,
-    description,
-    alternates: { canonical: `/produk/${product.slug}` },
-    openGraph: {
-      type: "article",
-      title: `${product.name} — ${site.name}`,
-      description,
-      url: `/produk/${product.slug}`,
-      images: [{ url: product.image, width: 800, height: 800, alt: product.name }],
+  return pageMetadata({
+    title: product.name,
+    description: product.description,
+    path: `/produk/${product.slug}`,
+    type: "article",
+    image: {
+      url: product.image,
+      width: 800,
+      height: 800,
+      alt: product.name,
     },
-  };
+  });
 }
 
 export default function ProductDetailPage({ params }: { params: Params }) {
@@ -160,7 +158,7 @@ export default function ProductDetailPage({ params }: { params: Params }) {
 
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button
-              href={buildWhatsAppLink(site.whatsapp, product.name)}
+              href={buildWhatsAppLink(product.name)}
               variant="whatsapp"
               size="lg"
               className="sm:flex-1"

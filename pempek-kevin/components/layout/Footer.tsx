@@ -2,28 +2,27 @@ import Link from "next/link";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
-import { site } from "@/data/site";
+import { site, addressShort } from "@/data/site";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 const navLinks = [
   { href: "/", label: "Beranda" },
   { href: "/produk", label: "Produk" },
   { href: "/tentang", label: "Tentang Kami" },
-  { href: "/lokasi", label: "Kontak" },
+  { href: "/lokasi", label: "Lokasi" },
 ];
 
 export default function Footer() {
   const year = new Date().getFullYear();
-  const address = `${site.address.street}, ${site.address.city}, ${site.address.province} ${site.address.postalCode}`;
 
   return (
     <footer className="bg-brand-red-dark text-white">
       <Container className="py-12">
         <div className="grid gap-10 md:grid-cols-3">
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2 py-1">
               <Image
-                src="/images/logo-pempek-kevin.png"
+                src="/images/logo-pempek-kevin.webp"
                 alt={`Logo ${site.name}`}
                 width={40}
                 height={40}
@@ -32,6 +31,11 @@ export default function Footer() {
               <span className="font-display text-lg font-bold">{site.name}</span>
             </Link>
             <p className="max-w-xs text-sm text-white/80">{site.tagline}</p>
+            <p className="max-w-xs font-display text-base font-bold text-brand-yellow">
+              {site.footer.slogan}
+            </p>
+            <p className="max-w-xs text-sm text-white/80">{site.footer.description}</p>
+            <p className="max-w-xs text-xs text-white/70">{site.footer.tagline}</p>
           </div>
 
           <nav aria-label="Navigasi footer" className="space-y-3">
@@ -41,7 +45,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/80 transition-colors hover:text-brand-yellow"
+                    className="inline-flex min-h-[44px] items-center text-sm text-white/80 transition-colors hover:text-brand-yellow"
                   >
                     {link.label}
                   </Link>
@@ -53,7 +57,7 @@ export default function Footer() {
           <div className="space-y-3">
             <h2 className="font-display text-base font-bold">Kontak &amp; Lokasi</h2>
             <address className="space-y-2 text-sm not-italic text-white/80">
-              <p>{address}</p>
+              <p>{addressShort}</p>
               {site.openingHours.map((item) => (
                 <p key={item.day}>
                   {item.day}: {item.hours}
@@ -61,12 +65,13 @@ export default function Footer() {
               ))}
             </address>
             <a
-              href={buildWhatsAppLink(site.whatsapp)}
+              href={buildWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex text-sm font-semibold text-brand-yellow hover:underline"
+              aria-label={`Chat WhatsApp ${site.whatsappDisplay}`}
+              className="inline-flex min-h-[44px] items-center text-sm font-semibold text-brand-yellow hover:underline"
             >
-              Chat WhatsApp
+              {site.whatsappDisplay}
             </a>
           </div>
         </div>
@@ -79,7 +84,7 @@ export default function Footer() {
             aria-label={`Instagram ${site.name}`}
           >
             <InstagramIcon />
-            Instagram
+            {site.socialHandles.instagram}
           </Button>
           <Button
             href={site.social.tiktok}
@@ -88,10 +93,10 @@ export default function Footer() {
             aria-label={`TikTok ${site.name}`}
           >
             <TikTokIcon />
-            TikTok
+            {site.socialHandles.tiktok}
           </Button>
           <Button
-            href={buildWhatsAppLink(site.whatsapp)}
+            href={buildWhatsAppLink()}
             variant="whatsapp"
             size="sm"
           >

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
+import Button from "@/components/ui/Button";
 import { categories, products } from "@/data/products";
 import { site } from "@/data/site";
 
@@ -13,7 +14,19 @@ export default function CategoryShowcase() {
   return (
     <section className="bg-white pb-12 md:pb-16">
       <Container className="space-y-6">
-        <SectionTitle>{site.categorySectionTitle}</SectionTitle>
+        <div className="space-y-3">
+          <SectionTitle>{site.categorySectionTitle}</SectionTitle>
+          <div className="mx-auto max-w-2xl space-y-2 text-center">
+            {site.categorySectionDescription.map((paragraph) => (
+              <p
+                key={paragraph}
+                className="text-pretty text-sm leading-relaxed text-neutral-600 md:text-base"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </div>
 
         <div className="relative">
           <div
@@ -46,6 +59,12 @@ export default function CategoryShowcase() {
             aria-hidden="true"
             className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent md:hidden"
           />
+        </div>
+
+        <div className="flex justify-center">
+          <Button href="/produk" variant="secondary" size="md">
+            Lihat Semua Menu
+          </Button>
         </div>
       </Container>
     </section>

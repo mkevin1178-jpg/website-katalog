@@ -9,13 +9,20 @@ import { Product, categoryLabel, categories } from "@/data/products";
 
 const validValues = new Set<string>(["semua", ...categories.map((c) => c.value)]);
 
-export default function ProductCatalog({ products }: { products: Product[] }) {
+export default function ProductCatalog({
+  products,
+  initialFilter,
+}: {
+  products: Product[];
+  /** Nilai awal filter, dikirim dari Server Component. */
+  initialFilter: { kategori: string; q: string };
+}) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const [search, setSearch] = useState(() => searchParams.get("q") ?? "");
+  const [search, setSearch] = useState(() => searchParams.get("q") ?? initialFilter.q);
 
-  const rawCategory = searchParams.get("kategori");
+  const rawCategory = searchParams.get("kategori") ?? initialFilter.kategori;
   const active: FilterValue =
     rawCategory && validValues.has(rawCategory)
       ? (rawCategory as FilterValue)
@@ -64,7 +71,7 @@ export default function ProductCatalog({ products }: { products: Product[] }) {
           : `Menampilkan ${filtered.length} produk.`}
       </p>
 
-      <ProductGrid products={filtered} />
+      <ProductGrid products={filtered} priorityCount={4} />
     </div>
   );
 }

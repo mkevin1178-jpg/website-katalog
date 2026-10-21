@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
 import { site } from "@/data/site";
+import { ogImage, siteOpenGraph } from "@/lib/metadata";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -39,22 +40,15 @@ export const metadata: Metadata = {
     "pempek frozen",
     "kuliner palembang",
   ],
-  openGraph: {
-    type: "website",
-    locale: "id_ID",
-    siteName: site.name,
-    title: `${site.name} — Pempek Khas Palembang Sejak ${site.foundedYear}`,
-    description: site.description,
-    url: site.url,
-    images: [{ url: "/images/og-image.png", width: 1200, height: 630, alt: site.name }],
-  },
+  openGraph: siteOpenGraph,
   twitter: {
     card: "summary_large_image",
     title: site.name,
     description: site.description,
+    images: [ogImage.url],
   },
   icons: {
-    icon: "/images/logo-pempek-kevin.png",
+    icon: "/images/logo-pempek-kevin.webp",
   },
 };
 
@@ -74,9 +68,25 @@ const jsonLd = {
     streetAddress: site.address.street,
     addressLocality: site.address.city,
     addressRegion: site.address.province,
-    postalCode: site.address.postalCode,
+    ...(site.address.postalCode ? { postalCode: site.address.postalCode } : {}),
     addressCountry: "ID",
   },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "13:30",
+      closes: "19:30",
+    },
+  ],
+  sameAs: [site.social.instagramProfile, site.social.tiktokProfile],
   areaServed: ["Bogor", "Jabodetabek", "Australia", "Oman", "Qatar"],
 };
 

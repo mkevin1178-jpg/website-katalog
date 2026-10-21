@@ -1,24 +1,54 @@
 import { Suspense } from "react";
-import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import PageHeader from "@/components/ui/PageHeader";
 import ProductCatalog from "@/components/produk/ProductCatalog";
 import { products } from "@/data/products";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Katalog Produk",
   description:
-    "Katalog lengkap Pempek Kevin: pempek signature ikan tenggiri (Kapal Selam Jumbo, Lenjer Jumbo, Selam Mini, Lenjer, Adaan, Kulit Crispy), paket pempek, kuliner khas Palembang (Lenggang, Rujak Mie, Tekwan, Model), hingga frozen food. Harga jelas dan bisa langsung pesan via WhatsApp.",
-  alternates: { canonical: "/produk" },
-};
+    "Temukan Pempek favoritmu: pempek signature ikan tenggiri (Kapal Selam Jumbo, Lenjer Jumbo, Selam Mini, Lenjer, Adaan, Kulit Crispy), paket pempek, kuliner khas Palembang (Lenggang, Rujak Mie, Tekwan, Model), hingga frozen food. Harga jelas dan bisa langsung pesan via WhatsApp.",
+  path: "/produk",
+});
 
-export default function ProdukPage() {
+/**
+ * Server Component.
+ *
+ * `searchParams` diakses supaya halaman ini dirender di server pada setiap
+ * request: filter kategori (?kategori=) sudah ikut ter-render di HTML awal,
+ * sehingga seluruh daftar produk tetap terbaca mesin pencari tanpa perlu
+ * menunggu JavaScript. Default filter tetap "Semua".
+ */
+export default function ProdukPage({
+  searchParams,
+}: {
+  searchParams: Record<string, string | string[] | undefined>;
+}) {
+  const kategori =
+    typeof searchParams.kategori === "string" ? searchParams.kategori : "semua";
+  const q = typeof searchParams.q === "string" ? searchParams.q : "";
+
   return (
     <>
       <PageHeader
         eyebrow="Katalog"
-        title="Pilih pempek favorit Anda"
-        description="Empat kategori menu: Pempek Signature, Paket Pempek, Kuliner Khas Palembang, dan Frozen Food. Filter kategori untuk menemukan yang Anda cari, lalu pesan langsung via WhatsApp."
+        title="Temukan Pempek Favoritmu!"
+        description={
+          <>
+            <span className="block">
+              Mau menikmati pempek sendiri, berbagi bersama keluarga, atau
+              membawa pulang cita rasa khas Palembang ke rumah? Semuanya ada di
+              sini!
+            </span>
+            <span className="block mt-2">
+              Jelajahi aneka pempek signature, paket pempek untuk dinikmati
+              bersama, kuliner khas Palembang, hingga frozen food yang praktis
+              untuk stok di rumah. Pilih menu yang menggugah selera, lalu pesan
+              dengan mudah melalui WhatsApp.
+            </span>
+          </>
+        }
       />
       <Container className="py-10 md:py-14">
         <Suspense
@@ -29,7 +59,7 @@ export default function ProdukPage() {
             />
           }
         >
-          <ProductCatalog products={products} />
+          <ProductCatalog products={products} initialFilter={{ kategori, q }} />
         </Suspense>
       </Container>
     </>

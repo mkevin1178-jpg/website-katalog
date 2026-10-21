@@ -5,7 +5,6 @@ import { motion, useReducedMotion } from "framer-motion";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import { site } from "@/data/site";
-import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 const decorationPositions = [
   "left-[2%] top-[12%] w-14 sm:w-16 md:top-[18%] md:w-24",
@@ -21,7 +20,7 @@ export default function Hero() {
       <Container className="relative z-10 grid items-center gap-8 py-10 md:min-h-[560px] md:grid-cols-2 md:gap-12 md:py-14">
         <div className="text-center md:text-left">
           <p className="mb-4 text-xs font-bold uppercase tracking-wide text-brand-red-dark">
-            Sejak {site.foundedYear} &bull; Bogor
+            {site.hero.eyebrow}
           </p>
 
           <h1 className="heading-impact text-[clamp(2.75rem,10vw,4.5rem)] leading-[0.78] tracking-tight text-brand-red">
@@ -38,26 +37,21 @@ export default function Hero() {
                 }}
               >
                 {line}
+                {index < site.hero.titleLines.length - 1 ? " " : null}
               </motion.span>
             ))}
           </h1>
 
           <p className="mx-auto mt-5 max-w-md text-pretty text-sm leading-relaxed text-neutral-700 md:mx-0 md:text-base">
-            {site.tagline} Dibuat dari ikan segar pilihan dengan resep keluarga
-            sejak {site.foundedYear}.
+            {site.hero.description}
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-3 md:justify-start">
-            <Button
-              href={buildWhatsAppLink(site.whatsapp)}
-              variant="whatsapp"
-              size="md"
-            >
-              <WhatsAppIcon />
-              Pesan via WhatsApp
-            </Button>
             <Button href="/produk" variant="primary" size="md">
               Lihat Menu
+            </Button>
+            <Button href="/tentang" variant="secondary" size="md">
+              Cerita Kami
             </Button>
           </div>
         </div>
@@ -112,13 +106,5 @@ export default function Hero() {
         );
       })}
     </section>
-  );
-}
-
-function WhatsAppIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm5.8 14.06c-.24.68-1.42 1.31-1.96 1.36-.54.05-1.05.24-3.53-.73-2.99-1.18-4.89-4.25-5.04-4.45-.15-.2-1.21-1.61-1.21-3.07 0-1.46.77-2.18 1.04-2.48.27-.3.59-.37.79-.37.2 0 .39.002.56.01.18.007.42-.07.66.5.24.58.82 2.02.89 2.17.07.15.12.32.02.52-.1.2-.15.32-.29.49-.15.17-.31.39-.44.52-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.02 1.12.995 2.06 1.3 2.36 1.45.3.15.47.13.65-.08.17-.2.74-.86.94-1.16.2-.3.39-.25.66-.15.27.1 1.71.81 2 .96.3.15.5.22.57.34.07.13.07.73-.17 1.41Z" />
-    </svg>
   );
 }

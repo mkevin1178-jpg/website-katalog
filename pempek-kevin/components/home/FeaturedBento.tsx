@@ -63,7 +63,7 @@ function BentoCard({ product, index }: { product: Product; index: number }) {
             {formatRupiah(product.price)}
           </p>
           <Button
-            href={buildWhatsAppLink(site.whatsapp, product.name)}
+            href={buildWhatsAppLink(product.name)}
             variant="whatsapp"
             size="sm"
           >

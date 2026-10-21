@@ -14,7 +14,7 @@ type LinkProps = CommonProps &
   AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
 
 const base =
-  "inline-flex h-10 w-10 items-center justify-center rounded-full text-neutral-700 transition-colors hover:bg-neutral-100 hover:text-brand-red";
+  "inline-flex h-11 w-11 items-center justify-center rounded-full text-neutral-700 transition-colors hover:bg-neutral-100 hover:text-brand-red lg:h-10 lg:w-10";
 
 export default function IconButton(props: ButtonProps | LinkProps) {
   if ("href" in props && props.href !== undefined) {

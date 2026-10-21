@@ -49,7 +49,7 @@ export default function CtaBanner() {
               </p>
               <div className="mt-6 flex justify-center">
                 <Button
-                  href={buildWhatsAppLink(site.whatsapp)}
+                  href={buildWhatsAppLink()}
                   variant="whatsapp"
                   size="lg"
                 >

@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import PageHeader from "@/components/ui/PageHeader";
 import GalleryGrid from "@/components/galeri/GalleryGrid";
 import { galleryItems } from "@/data/gallery";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Galeri",
   description:
     "Galeri foto produk dan dokumentasi proses produksi Pempek Kevin, UMKM pempek khas Palembang di Bogor.",
-  alternates: { canonical: "/galeri" },
-};
+  path: "/galeri",
+});
 
 export default function GaleriPage() {
   return (
