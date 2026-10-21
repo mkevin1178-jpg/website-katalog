@@ -20,50 +20,50 @@ export const metadata = pageMetadata({
 const timeline: TimelineItem[] = [
   {
     year: "2009",
-    title: "Pempek Kevin berdiri",
+    title: "Pempek Kevin Berdiri",
     description:
       "Dimulai dari dapur keluarga di Bogor pada 12 Februari 2009 dengan resep pempek warisan keluarga.",
   },
   {
     year: "2013",
-    title: "Mulai dikenal pelanggan lokal",
+    title: "Mulai Dikenal Pelanggan Lokal",
     description:
       "Pesanan dari mulut ke mulut meningkat, terutama untuk acara keluarga dan hajatan di Bogor.",
   },
   {
     year: "2018",
-    title: "Menembus pasar luar negeri",
+    title: "Menembus Pasar Luar Negeri",
     description:
-      "Produk pernah dikirim ke Australia, Oman, dan Qatar, membuktikan cita rasa yang dipercaya.",
+      "Produk pernah dikirim ke Australia, Oman, dan Qatar.",
   },
   {
     year: "Sekarang",
-    title: "Hadir secara digital",
+    title: "Hadir Secara Digital",
     description:
-      "Meluncurkan katalog digital agar pelanggan lebih mudah melihat produk, harga, dan memesan via WhatsApp.",
+      "Menghadirkan katalog digital agar pelanggan lebih mudah melihat produk, harga, dan memesan melalui WhatsApp.",
   },
 ];
 
 const journeyParagraphs = [
-  "Sejak pertama kali dirintis oleh Bu Tata pada 2009, Pempek Kevin terus bertumbuh dengan menjaga resep keluarga dan kualitas rasa sebagai pegangan utama.",
-  "Perjalanan ini tidak lepas dari kepercayaan pelanggan yang telah memilih dan menikmati produk kami. Setiap pesanan menjadi bagian dari cerita yang terus kami rawat, sekaligus motivasi untuk mempertahankan cita rasa yang telah dikenal sejak awal.",
+  "Sejak dirintis Bu Tata pada 2009, Pempek Kevin terus berkembang dengan menjaga resep keluarga dan kualitas rasa.",
+  "Kepercayaan pelanggan menjadi bagian penting dari perjalanan kami untuk terus menghadirkan pempek berkualitas.",
 ];
 
 const values = [
   {
     title: "Ikan Tenggiri Pilihan",
     description:
-      "Kelezatan pempek yang baik berawal dari bahan baku yang berkualitas. Karena itu, Pempek Kevin mengutamakan penggunaan ikan tenggiri pilihan untuk menghadirkan cita rasa gurih yang khas dan menggugah selera.",
+      "Ikan tenggiri pilihan menjadi dasar cita rasa gurih khas Palembang yang kami jaga di setiap batch.",
   },
   {
     title: "Semangat Homemade",
     description:
-      "Setiap sajian membawa semangat homemade yang telah kami jaga sejak 2009. Kami percaya bahwa perhatian terhadap bahan baku, proses pembuatan, dan konsistensi rasa merupakan bagian penting dalam menghadirkan pempek yang bisa dinikmati bersama keluarga.",
+      "Semangat homemade yang kami jaga sejak 2009 tetap hadir di setiap proses pembuatan pempek.",
   },
   {
     title: "Kepercayaan Pelanggan",
     description:
-      "Bukan hanya tentang rasa, tetapi juga tentang menjaga kepercayaan pelanggan dalam setiap sajian.",
+      "Menjaga kualitas produk adalah cara kami mempertahankan kepercayaan pelanggan dari waktu ke waktu.",
   },
 ];
 
@@ -86,7 +86,7 @@ export default function TentangPage() {
             className="object-cover"
           />
         </div>
-        <div className="space-y-5">
+        <div className="max-w-prose space-y-5">
           <h2 className="heading-impact text-2xl leading-tight text-neutral-900 text-balance sm:text-3xl">
             Pempek dengan Cita Rasa Autentik
           </h2>
@@ -119,38 +119,44 @@ export default function TentangPage() {
       </Container>
 
       <section className="bg-brand-cream py-12 md:py-16">
-        <Container className="grid gap-10 md:grid-cols-2">
-          <div className="space-y-6">
-            <Badge className="self-start">Perjalanan</Badge>
-            <SectionTitle align="left">Dari 2009 hingga Hari Ini</SectionTitle>
-            <div className="space-y-3">
-              {journeyParagraphs.map((paragraph) => (
-                <p key={paragraph} className="text-pretty text-neutral-600">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-            <Timeline items={timeline} />
-          </div>
-          <div className="space-y-6">
-            <Badge className="self-start">Nilai Kami</Badge>
-            <SectionTitle align="left">
-              Asli Ikan Tenggiri, Dibuat dengan Sepenuh Hati
-            </SectionTitle>
-            <div className="space-y-4">
-              {values.map((value) => (
-                <div
-                  key={value.title}
-                  className="rounded-2xl bg-white p-5 shadow-sm"
-                >
-                  <h3 className="font-display text-lg font-bold text-neutral-900">
-                    {value.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-neutral-600">
-                    {value.description}
+        <Container>
+          <Timeline items={timeline} />
+
+          <div className="mt-10 grid gap-10 border-t border-neutral-200 pt-10 md:grid-cols-2 md:gap-12">
+            <div className="space-y-6">
+              <Badge className="self-start">Perjalanan</Badge>
+              <SectionTitle align="left">Dari 2009 hingga Hari Ini</SectionTitle>
+              <div className="space-y-4">
+                {journeyParagraphs.map((paragraph) => (
+                  <p
+                    key={paragraph}
+                    className="max-w-prose text-pretty text-neutral-600"
+                  >
+                    {paragraph}
                   </p>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+            <div className="space-y-6">
+              <Badge className="self-start">Nilai Kami</Badge>
+              <SectionTitle align="left">
+                Asli Ikan Tenggiri, Dibuat dengan Sepenuh Hati
+              </SectionTitle>
+              <div className="space-y-4">
+                {values.map((value) => (
+                  <div
+                    key={value.title}
+                    className="rounded-2xl bg-white p-5 shadow-sm"
+                  >
+                    <h3 className="font-display text-lg font-bold text-neutral-900">
+                      {value.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-neutral-600">
+                      {value.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </Container>
@@ -178,12 +184,6 @@ export default function TentangPage() {
             </div>
           ))}
         </div>
-        <p className="max-w-2xl text-pretty text-neutral-600">
-          Bagi kami, setiap pengiriman merupakan pengalaman berharga dan bagian
-          dari perjalanan Pempek Kevin dalam berbagi cita rasa. Dari Bogor hingga
-          ke mancanegara, kami berharap kelezatan pempek khas Palembang dapat
-          dinikmati lebih banyak orang.
-        </p>
       </Container>
 
       <section className="bg-brand-cream py-12 md:py-16">
@@ -202,40 +202,50 @@ export default function TentangPage() {
           <p className="text-center text-xs text-neutral-500">
             Video placeholder — akan diganti dengan video profil resmi.
           </p>
+        </Container>
+      </section>
 
-          <div className="space-y-4 text-center">
+      <section className="bg-white py-12 md:py-16">
+        <Container className="space-y-4">
+          <div className="flex flex-col items-center gap-3 text-center">
             <SectionTitle>Lebih dari Sekadar Pempek</SectionTitle>
-            <p className="mx-auto max-w-2xl text-pretty text-neutral-600">
-              Kami percaya bahwa makanan memiliki cara tersendiri untuk
-              mendekatkan orang-orang. Semangkuk cuko, sepiring pempek hangat,
-              dan waktu yang dihabiskan bersama keluarga dapat menciptakan
-              momen sederhana yang berarti.
+          </div>
+          <div className="mx-auto flex max-w-2xl flex-col gap-4">
+            <p className="text-pretty text-neutral-600">
+              Kami percaya makanan dapat mendekatkan orang-orang. Sepiring
+              pempek hangat dan waktu bersama keluarga dapat menciptakan momen
+              sederhana yang berarti.
             </p>
-            <p className="mx-auto max-w-2xl text-pretty text-neutral-600">
-              Itulah semangat yang ingin kami hadirkan melalui Pempek Kevin:
-              bukan hanya menyajikan makanan, tetapi juga berbagi kehangatan,
-              tradisi, dan kebahagiaan dalam setiap kesempatan.
+            <p className="text-pretty text-neutral-600">
+              Melalui Pempek Kevin, kami ingin berbagi kehangatan, tradisi, dan
+              kebahagiaan dalam setiap kesempatan.
             </p>
           </div>
+        </Container>
+      </section>
 
-          <div className="space-y-4 text-center">
+      <section className="border-t border-neutral-100 bg-white py-12 md:py-16">
+        <Container className="space-y-4">
+          <div className="flex flex-col items-center gap-3 text-center">
             <SectionTitle>
               Terima Kasih Telah Menjadi Bagian dari Cerita Kami
             </SectionTitle>
-            <p className="mx-auto max-w-2xl text-pretty text-neutral-600">
+          </div>
+          <div className="mx-auto flex max-w-2xl flex-col gap-4">
+            <p className="text-pretty text-neutral-600">
               Dari keluarga kami untuk keluarga Anda, terima kasih telah
               mempercayakan Pempek Kevin sebagai bagian dari momen kebersamaan.
             </p>
-            <p className="mx-auto max-w-2xl text-pretty text-neutral-600">
-              Kami akan terus berusaha menghadirkan pempek homemade berbahan ikan
-              tenggiri pilihan dengan cita rasa khas Palembang yang bisa
-              dinikmati dari generasi ke generasi.
+            <p className="text-pretty text-neutral-600">
+              Kami akan terus menghadirkan pempek homemade berbahan ikan tenggiri
+              pilihan dengan cita rasa khas Palembang yang dapat dinikmati lintas
+              generasi.
             </p>
-            <div className="flex justify-center pt-2">
-              <Button href="/produk" variant="primary" size="md">
-                Jelajahi Menu Kami
-              </Button>
-            </div>
+          </div>
+          <div className="flex justify-center pt-2">
+            <Button href="/produk" variant="primary" size="md">
+              Jelajahi Menu Kami
+            </Button>
           </div>
         </Container>
       </section>

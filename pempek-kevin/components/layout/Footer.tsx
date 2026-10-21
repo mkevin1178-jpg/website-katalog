@@ -9,6 +9,7 @@ const navLinks = [
   { href: "/", label: "Beranda" },
   { href: "/produk", label: "Produk" },
   { href: "/tentang", label: "Tentang Kami" },
+  { href: "/galeri", label: "Galeri" },
   { href: "/lokasi", label: "Lokasi" },
 ];
 
@@ -30,7 +31,6 @@ export default function Footer() {
               />
               <span className="font-display text-lg font-bold">{site.name}</span>
             </Link>
-            <p className="max-w-xs text-sm text-white/80">{site.tagline}</p>
             <p className="max-w-xs font-display text-base font-bold text-brand-yellow">
               {site.footer.slogan}
             </p>

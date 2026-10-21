@@ -37,15 +37,13 @@ export default function ProdukPage({
         description={
           <>
             <span className="block">
-              Mau menikmati pempek sendiri, berbagi bersama keluarga, atau
-              membawa pulang cita rasa khas Palembang ke rumah? Semuanya ada di
-              sini!
+              Mau menikmati pempek sendiri atau bersama keluarga? Temukan beragam
+              pilihan pempek khas Palembang untuk setiap momen.
             </span>
-            <span className="block mt-2">
-              Jelajahi aneka pempek signature, paket pempek untuk dinikmati
-              bersama, kuliner khas Palembang, hingga frozen food yang praktis
-              untuk stok di rumah. Pilih menu yang menggugah selera, lalu pesan
-              dengan mudah melalui WhatsApp.
+            <span className="block mt-3">
+              Mulai dari pempek signature, paket keluarga, kuliner khas Palembang,
+              hingga frozen food. Pilih favoritmu dan pesan dengan mudah melalui
+              WhatsApp.
             </span>
           </>
         }

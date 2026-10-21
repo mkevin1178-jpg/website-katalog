@@ -7,14 +7,20 @@ ada fase yang dikerjakan. Teman: `WORKFLOW.md` (strategi) dan `DESIGN.md` (landa
 
 ## Status Terakhir
 
-> **Sesi 5 — SELESAI (Pembaruan konten sesuai naskah `konten-website-pempek-kevin.md`):**
-> seluruh naskah konten (Hero, preview Tentang Kami, preview Produk, 7 blok
-> halaman Tentang Kami, katalog, footer, info kontak) sudah diterapkan; data
-> bisnis (WA 0851-2297-3291, alamat Taman Yasmin Sektor 7 Bogor, jam operasional,
-> Maps, Instagram, TikTok) diperbarui. Identitas visual, layout, route, dan
-> struktur section **tidak** diubah. Lint bersih, build 26 route (1 dynamic: `/produk`).
+> **Sesi 6 — SELESAI (Revisi layout/konten sesuai dokumen `revisi.md`):**
+> judul hero jadi `Pempek Kevin` + subjudul `Asli Ikan Tenggiri dari Bogor`; 4 card
+> kategori dipusatkan (sebelumnya grid 5 kolom → ruang kosong di kanan); 2 paragraf
+> baru di "Temukan Pempek Favoritmu"; menu `Galeri` ditambahkan di navbar (desktop +
+> mobile) dan footer nav; posisi harga di seluruh card produk diseragamkan; timeline
+> 2009→Sekarang diubah jadi horizontal (≥1024px) dan dipindah ke atas section
+> Perjalanan + Nilai Kami; paragraf penutup Pencapaian dihapus; "Lebih dari Sekadar
+> Pempek" dan "Terima Kasih..." dipisah jadi 2 section sendiri di bawah video profil;
+> footer: kalimat `Cita Rasa Tenggiri, Favorit Sepanjang Hari.` dihapus, slogan jadi
+> `LEMAK NIANN OYYY`. Identitas visual, route, dan **data katalog produk tidak**
+> diubah. Lint bersih, build 26 route (1 dynamic: `/produk`).
 >
-> Catatan: Sesi 4 + 5 sudah di-commit (lihat `git log`).
+> Catatan: Sesi 4 + 5 sudah di-commit (lihat `git log`). Sesi 6 juga sudah di-commit
+> (`feat: revisi layout dan konten sesuai revisi.md`). Belum di-push.
 
 ## 1. Instruksi Awal (Prompt 0 — mode Plan)
 
@@ -253,6 +259,61 @@ TikTok `@kedaipempekkevin_`. `.env.example` diisi nomor resmi.
   `scrollWidth == viewport` (nol horizontal scroll), nol teks terpotong.
 - Uji tap target: nol regresi (sisa: link teks judul produk — inline, exempt).
 
+### Sesi 6 — 21 Okt 2026 (Revisi dari `revisi.md`)
+
+Sumber kebenaran: **`revisi.md`** (10 section revisi: hero, section kategori, navbar,
+tipografi paragraf, harga card produk, timeline + Nilai Kami, Pencapaian, video +
+penutup, footer, validasi).
+Sifat: **penyempurnaan layout/konten** — tanpa redesign, tanpa dependensi baru,
+tanpa menambah/menghapus route, dan **data katalog produk tidak diubah**
+(`data/products.ts` tidak disentuh).
+
+| Section revisi | Perubahan |
+|---|---|
+| §1 Hero | Judul utama `Pempek Kevin` (2 baris: `Pempek` / `Kevin`), `Asli Ikan Tenggiri dari Bogor` jadi subjudul di bawahnya (`site.hero.subtitle`), hierarki: eyebrow → judul → subjudul → deskripsi → CTA. Font & palet tidak diubah. |
+| §2 Temukan Pempek Favoritmu | Grid `md:grid-cols-5` (4 card → kolom ke-5 kosong) jadi `md:grid-cols-4` + `md:mx-auto md:max-w-4xl`; 2 paragraf baru dari dokumen (jarak 16px, lebar max 672px, `mx-auto`). Judul yang sama dipakai lagi di `/produk` → 2 paragraf di sana ikut disamakan agar tidak ada 2 versi naskah untuk judul yang sama. |
+| §3 Navbar | Menu `Galeri` → `/galeri` (halaman galeri yang sudah ada, tidak dibuat section duplikat); otomatis tersedia di nav mobile (memakai array `navLinks` yang sama) + footer nav. |
+| §4 Tipografi | Narasi intro `/tentang` diberi `max-w-prose`; jarak antarparagraf diseragamkan (`space-y-4`); 2 penutup dipisah jadi 2 section (lihat §8). |
+| §5 Harga card produk | Area info card seragam: label kategori `min-h-[2rem]` (<lg), judul `min-h-[3.75rem]` (<420px) / `min-h-[2.5rem]`, deskripsi `min-h-[2.5rem]` → harga selalu pada y yang sama dalam satu baris. Data harga/nama/deskripsi produk tidak diubah. |
+| §6 Timeline | `components/tentang/Timeline.tsx` ditulis ulang: horizontal (4 kolom + garis penghubung 2px + titik) di ≥1024px, vertikal di bawahnya (titik + garis vertikal) agar tidak dipaksakan 4 kolom sempit. Dipindah ke **atas** section Perjalanan + Nilai Kami, dipisah garis pemisah (`border-t`). 4 milestone + judul/deskripsi persis dari dokumen. |
+| §6.B/C Narasi | Perjalanan: judul tetap `Dari 2009 hingga Hari Ini` + 2 paragraf dari dokumen. Nilai Kami: judul tetap + 3 nilai dengan deskripsi dipersingkat (proporsional). |
+| §7 Pencapaian | Paragraf penutup (`Bagi kami, setiap pengiriman merupakan pengalaman berharga…`) dihapus; 3 kartu negara + keterangan `Tujuan pengiriman produk.` tetap; spacing tidak menyisakan rongga kosong. |
+| §8 Video + penutup | Section Video Profil dipangkas hanya jadi video + caption. `Lebih dari Sekadar Pempek` dan `Terima Kasih Telah Menjadi Bagian dari Cerita Kami` jadi **2 section sendiri** di bawahnya (putih, dipisah `border-t`), copy diganti sesuai dokumen. |
+| §9 Footer | `site.tagline` (`Cita Rasa Tenggiri, Favorit Sepanjang Hari.`) dihapus dari data + footer; slogan `LEMAK NIANN OYYY` (huruf kapital penuh), posisi & desain slogan tetap. |
+
+**Keputusan & penyesuaian**
+- **Galeri → `/galeri`**, bukan anchor `/#galeri`: halaman `/galeri` sudah ada dan
+  preview galeri di beranda sudah menuju ke sana, jadi tidak ada section galeri
+  duplikat dan tidak perlu section/anchor baru.
+- **Timeline horizontal hanya ≥1024px.** Di 768px dan 360px dipakai layout vertikal
+  (garis + titik sejajar) sesuai §6.A "jangan memaksakan timeline horizontal";
+  dokumen juga meminta timeline tetap nyaman di mobile.
+- **Garis penghubung timeline dibuat tanpa `position: absolute` / margin negatif**
+  (prinsip §6): tiap milestone punya segmen garis di dalam sel grid, sehingga
+  ujungnya pas di titik berikutnya (measured: dot left 96/368/640/912, line 256px).
+- **Area info card produk** pakai `min-height` (bukan `line-clamp` pada judul) agar
+  nama produk tidak terpotong tetapi posisi harga tetap sama.
+- **Label kategori** diberi ruang 2 baris di bawah 1024px karena
+  `KULINER KHAS PALEMBANG` membungkus 2 baris di layar sempit — tanpa ini harga
+  di 2 card pada baris yang sama bergeser 16px.
+- Copy yang **tidak** disebut eksplisit di dokumen tidak diubah (mis. paragraf
+  intro `/tentang` tetap, hanya lebarnya dibatasi).
+
+**Verifikasi**
+- `npm run lint` → ✅ no warnings/errors; `npx tsc --noEmit` → ✅ bersih
+- `npm run build` → ✅ 26 route (`○` static, `●` SSG, `ƒ /produk`)
+- Semua halaman 200 (`/`, `/produk`, `/produk/[slug]`, `/tentang`, `/lokasi`, `/galeri`)
+- Cek konten (fetch HTML): semua string baru ada, teks lama (`Lemakk niannn oyyy!`,
+  `Cita Rasa Tenggiri…`, paragraf Pencapaian, 4 judul milestone versi lama) hilang;
+  filter katalog tetap (15 / 3 / 2 / 4 / 6 / 1 produk)
+- Uji responsif (Chrome headless + CDP, 6 halaman × 360/640/768/1024/1280):
+  `scrollWidth == viewport` (nol horizontal scroll)
+- Pengukuran alignment: 4 card kategori simetris (selisih kiri/kanan = 0px);
+  harga card produk seragam per baris (2/3/4 card per baris pada 360/768/1280);
+  timeline horizontal di 1024 & 1280 (4 titik satu baris) dan vertikal di 768 & 360;
+  hero tanpa tumpang tindih (jarak judul→subjudul 20px, subjudul→deskripsi 20px);
+  section penutup terpisah dari video profil (bg putih + `border-t`)
+
 ## 5. QA & Catatan (untuk sesi berikutnya)
 
 - [ ] `npm run dev`, cek manual di browser (360/768/1280px)
@@ -276,7 +337,8 @@ TikTok `@kedaipempekkevin_`. `.env.example` diisi nomor resmi.
 7. **Galeri** — `public/images/gallery/` (8 item, `data/gallery.ts`)
 8. **Harga & deskripsi produk** — `data/products.ts` (harga dummy saat ini).
    Sesi 5 **tidak** mengubah katalog (naskah §3.2: nama/deskripsi/harga mengikuti
-   katalog yang sudah tersedia) — nama, harga, dan kategori produk tetap apa adanya.
+   katalog yang sudah tersedia) dan Sesi 6 juga **tidak** mengubah katalog (revisi
+   §5: "jangan mengubah data produk") — nama, harga, dan kategori produk tetap apa adanya.
 9. **`og-image.png`** — `public/images/` (untuk Open Graph, 1200×630) — **wajib ada
    sebelum deploy** (file PNG, jangan dikonversi WebP)
 10. **Sosial media** — ✅ terisi di sesi 5 (Instagram `@kedaipempekevin_`,

@@ -35,15 +35,15 @@ export default function ProductCard({
       </Link>
 
       <div className="flex flex-1 flex-col gap-2 p-4">
-        <span className="text-xs font-semibold uppercase tracking-wide text-brand-red">
+        <span className="min-h-[2rem] text-xs font-semibold uppercase tracking-wide text-brand-red lg:min-h-0">
           {categoryLabel(product.category)}
         </span>
-        <h3 className="heading-impact text-base leading-tight text-neutral-900">
+        <h3 className="heading-impact min-h-[3.75rem] min-[420px]:min-h-[2.5rem] text-base leading-tight text-neutral-900">
           <Link href={`/produk/${product.slug}`} className="hover:text-brand-red">
             {product.name}
           </Link>
         </h3>
-        <p className="line-clamp-2 text-sm text-neutral-600">
+        <p className="line-clamp-2 min-h-[2.5rem] text-sm text-neutral-600">
           {product.description}
         </p>
         <p className="mt-1 font-display text-xl font-bold text-brand-red">

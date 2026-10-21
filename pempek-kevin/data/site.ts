@@ -7,7 +7,6 @@ export type OpeningHour = {
 
 export const site = {
   name: "Pempek Kevin",
-  tagline: "Cita Rasa Tenggiri, Favorit Sepanjang Hari.",
   description:
     "Pempek Kevin homemade khas Palembang di Bogor sejak 2009. Dibuat dari ikan tenggiri pilihan, pengiriman hingga Australia, Oman, dan Qatar.",
   foundedYear: FOUNDED_YEAR,
@@ -59,7 +58,8 @@ export const site = {
 
   hero: {
     eyebrow: "Homemade Since 2009",
-    titleLines: ["Pempek", "Kevin,", "Asli Ikan", "Tenggiri", "dari Bogor!"],
+    titleLines: ["Pempek", "Kevin"],
+    subtitle: "Asli Ikan Tenggiri dari Bogor",
     description:
       "Dibuat secara homemade denganepenuh hati sejak 2009, Pempek Kevin menghadirkan kelezatan pempek khas Palembang menggunakan ikan tenggiri pilihan. Berawal dari resep keluarga, setiap sajian kami hadir untuk menemani momen hangat bersama orang-orang tersayang.",
   },
@@ -86,8 +86,8 @@ export const site = {
   /** Preview katalog produk di beranda. */
   categorySectionTitle: "Temukan Pempek Favoritmu!",
   categorySectionDescription: [
-    "Mau menikmati pempek sendiri, berbagi bersama keluarga, atau membawa pulang cita rasa khas Palembang? Temukan beragam pilihan menu yang dibuat untuk menemani setiap momen.",
-    "Jelajahi pempek signature, paket pempek untuk dinikmati bersama, kuliner khas Palembang, hingga frozen food praktis untuk stok di rumah. Pilih favoritmu dan pesan dengan mudah melalui WhatsApp.",
+    "Mau menikmati pempek sendiri atau bersama keluarga? Temukan beragam pilihan pempek khas Palembang untuk setiap momen.",
+    "Mulai dari pempek signature, paket keluarga, kuliner khas Palembang, hingga frozen food. Pilih favoritmu dan pesan dengan mudah melalui WhatsApp.",
   ],
 
   gallerySection: {
@@ -103,7 +103,7 @@ export const site = {
 
   /** Teks footer. */
   footer: {
-    slogan: "Lemakk niannn oyyy!",
+    slogan: "LEMAK NIANN OYYY",
     description:
       "Nikmati gurihnya pempek homemade asli ikan tenggiri dengan cita rasa khas Palembang yang dibuat denganepenuh hati sejak 2009. Dari menu favorit hingga sajian untuk keluarga, Pempek Kevin hadir menemani momen kebersamaan dengan kelezatan yang bikin ingin nambah lagi.",
     tagline: "Pempek homemade khas Palembang · Bogor · Sejak 2009",

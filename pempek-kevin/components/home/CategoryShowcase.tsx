@@ -16,7 +16,7 @@ export default function CategoryShowcase() {
       <Container className="space-y-6">
         <div className="space-y-3">
           <SectionTitle>{site.categorySectionTitle}</SectionTitle>
-          <div className="mx-auto max-w-2xl space-y-2 text-center">
+          <div className="mx-auto max-w-2xl space-y-4 text-center">
             {site.categorySectionDescription.map((paragraph) => (
               <p
                 key={paragraph}
@@ -28,11 +28,11 @@ export default function CategoryShowcase() {
           </div>
         </div>
 
-        <div className="relative">
+        <div className="relative md:mx-auto md:max-w-4xl">
           <div
             role="list"
             aria-label="Kategori produk"
-            className="flex snap-x gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] md:grid md:grid-cols-5 md:overflow-visible md:pb-0 [&::-webkit-scrollbar]:hidden"
+            className="flex snap-x gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] md:grid md:grid-cols-4 md:gap-4 md:overflow-visible md:pb-0 [&::-webkit-scrollbar]:hidden"
           >
             {availableCategories.map((category) => (
               <Link

@@ -42,6 +42,10 @@ export default function Hero() {
             ))}
           </h1>
 
+          <p className="mt-5 font-display text-lg font-bold uppercase tracking-wide text-brand-red-dark md:text-xl">
+            {site.hero.subtitle}
+          </p>
+
           <p className="mx-auto mt-5 max-w-md text-pretty text-sm leading-relaxed text-neutral-700 md:mx-0 md:text-base">
             {site.hero.description}
           </p>
