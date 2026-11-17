@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Nunito, Quicksand } from "next/font/google";
+import { Nunito, Quicksand, Caveat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -17,6 +17,13 @@ const nunito = Nunito({
 const quicksand = Quicksand({
   subsets: ["latin"],
   variable: "--font-quicksand",
+  display: "swap",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["700"],
+  variable: "--font-script",
   display: "swap",
 });
 
@@ -96,7 +103,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${nunito.variable} ${quicksand.variable}`}>
+    <html lang="id" className={`${nunito.variable} ${quicksand.variable} ${caveat.variable}`}>
       <body className="flex min-h-screen flex-col bg-white font-sans text-neutral-900 antialiased">
         <script
           type="application/ld+json"

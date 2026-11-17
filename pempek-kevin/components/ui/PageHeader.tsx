@@ -24,7 +24,9 @@ export default function PageHeader({
           {title}
         </h1>
         {description ? (
-          <p className="max-w-2xl text-pretty text-neutral-600">{description}</p>
+          <div className="max-w-2xl text-pretty text-neutral-600">
+            {typeof description === "string" ? <p>{description}</p> : description}
+          </div>
         ) : null}
         {children}
       </Container>

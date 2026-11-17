@@ -20,6 +20,7 @@ const config: Config = {
         sans: ["var(--font-nunito)", "ui-sans-serif", "system-ui", "sans-serif"],
         display: ["var(--font-quicksand)", "ui-sans-serif", "system-ui", "sans-serif"],
         impact: ["var(--font-nunito)", "ui-sans-serif", "system-ui", "sans-serif"],
+        script: ["var(--font-script)", "cursive"],
       },
       maxWidth: {
         content: "72rem",

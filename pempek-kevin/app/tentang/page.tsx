@@ -20,25 +20,25 @@ export const metadata = pageMetadata({
 const timeline: TimelineItem[] = [
   {
     year: "2009",
-    title: "Pempek Kevin Berdiri",
+    title: "Pempek Kevin berdiri",
     description:
       "Dimulai dari dapur keluarga di Bogor pada 12 Februari 2009 dengan resep pempek warisan keluarga.",
   },
   {
     year: "2013",
-    title: "Mulai Dikenal Pelanggan Lokal",
+    title: "Mulai dikenal pelanggan lokal",
     description:
       "Pesanan dari mulut ke mulut meningkat, terutama untuk acara keluarga dan hajatan di Bogor.",
   },
   {
     year: "2018",
-    title: "Menembus Pasar Luar Negeri",
+    title: "Menembus pasar luar negeri",
     description:
       "Produk pernah dikirim ke Australia, Oman, dan Qatar.",
   },
   {
     year: "Sekarang",
-    title: "Hadir Secara Digital",
+    title: "Hadir secara digital",
     description:
       "Menghadirkan katalog digital agar pelanggan lebih mudah melihat produk, harga, dan memesan melalui WhatsApp.",
   },
@@ -66,6 +66,31 @@ const values = [
       "Menjaga kualitas produk adalah cara kami mempertahankan kepercayaan pelanggan dari waktu ke waktu.",
   },
 ];
+
+/**
+ * Card putih yang dipakai bersama oleh section Perjalanan dan Nilai Kami agar
+ * gaya, padding, dan tipografinya identik di kedua kolom.
+ */
+function StoryCard({
+  title,
+  paragraphs,
+}: {
+  title: string;
+  paragraphs: string[];
+}) {
+  return (
+    <div className="rounded-2xl bg-white p-5 shadow-sm">
+      <h3 className="font-display text-lg font-bold text-neutral-900">{title}</h3>
+      <div className="mt-1 space-y-2">
+        {paragraphs.map((paragraph) => (
+          <p key={paragraph} className="text-sm text-neutral-600">
+            {paragraph}
+          </p>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function TentangPage() {
   return (
@@ -136,6 +161,13 @@ export default function TentangPage() {
                   </p>
                 ))}
               </div>
+              <StoryCard
+                title="Menjaga Rasa, Merawat Kepercayaan"
+                paragraphs={[
+                  "Resep keluarga dan proses homemade menjadi pegangan kami dalam menjaga cita rasa khas Palembang sejak 2009.",
+                  "Setiap pengalaman pelanggan kami jadikan panduan untuk terus menjaga kualitas produk yang kami hadirkan setiap hari.",
+                ]}
+              />
             </div>
             <div className="space-y-6">
               <Badge className="self-start">Nilai Kami</Badge>
@@ -144,17 +176,11 @@ export default function TentangPage() {
               </SectionTitle>
               <div className="space-y-4">
                 {values.map((value) => (
-                  <div
+                  <StoryCard
                     key={value.title}
-                    className="rounded-2xl bg-white p-5 shadow-sm"
-                  >
-                    <h3 className="font-display text-lg font-bold text-neutral-900">
-                      {value.title}
-                    </h3>
-                    <p className="mt-1 text-sm text-neutral-600">
-                      {value.description}
-                    </p>
-                  </div>
+                    title={value.title}
+                    paragraphs={[value.description]}
+                  />
                 ))}
               </div>
             </div>

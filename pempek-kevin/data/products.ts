@@ -20,25 +20,26 @@ export type Product = {
   tone?: "red" | "yellow";
 };
 
-const PLACEHOLDER = "/images/products/placeholder.svg";
-// TODO: ganti dengan foto/gambar kategori asli
-const CATEGORY_PLACEHOLDER = PLACEHOLDER;
 /** Gambar tile "Semua" di CategoryTabs. */
-export const allCategoryImage = PLACEHOLDER;
+export const allCategoryImage = "/images/semua-menu.webp";
 
 export const categories: {
   value: ProductCategory;
   label: string;
   image: string;
 }[] = [
-  { value: "signature", label: "Pempek Signature", image: CATEGORY_PLACEHOLDER },
-  { value: "paket", label: "Paket Pempek", image: CATEGORY_PLACEHOLDER },
+  {
+    value: "signature",
+    label: "Pempek Signature",
+    image: "/images/Pempek-Signature.webp",
+  },
+  { value: "paket", label: "Paket Pempek", image: "/images/Paket-pempek.webp" },
   {
     value: "khas-palembang",
     label: "Kuliner Khas Palembang",
-    image: CATEGORY_PLACEHOLDER,
+    image: "/images/kuliner-khas-palembang.webp",
   },
-  { value: "frozen", label: "Frozen Food", image: CATEGORY_PLACEHOLDER },
+  { value: "frozen", label: "Frozen Food", image: "/images/frozen-food.webp" },
 ];
 
 export function categoryLabel(value: ProductCategory): string {
@@ -54,7 +55,7 @@ export const products: Product[] = [
     category: "signature",
     price: 20000,
     description: "Pempek kapal selam ukuran jumbo.",
-    image: PLACEHOLDER,
+    image: "/images/Kapal-selam-jumbo.webp",
     featured: true,
   },
   {
@@ -65,7 +66,7 @@ export const products: Product[] = [
     price: 20000,
     description:
       "Pempek lenjer ukuran besar, dengan nama asli menu Lenjer Besar.",
-    image: PLACEHOLDER,
+    image: "/images/Lenjer-Jumbo.webp",
   },
   {
     slug: "selam-mini",
@@ -75,7 +76,7 @@ export const products: Product[] = [
     price: 5000,
     description:
       "Pempek kapal selam ukuran kecil, dengan nama asli menu Selam Kecil.",
-    image: PLACEHOLDER,
+    image: "/images/selam-mini.webp",
   },
   {
     slug: "lenjer",
@@ -84,7 +85,7 @@ export const products: Product[] = [
     category: "signature",
     price: 5000,
     description: "Pempek lenjer klasik berbentuk panjang, nama asli Lenjer.",
-    image: PLACEHOLDER,
+    image: "/images/lenjer.webp",
   },
   {
     slug: "adaan",
@@ -93,7 +94,7 @@ export const products: Product[] = [
     category: "signature",
     price: 5000,
     description: "Pempek bulat khas Palembang, nama asli Adaan.",
-    image: PLACEHOLDER,
+    image: "/images/adaan.webp",
   },
   {
     slug: "kulit-crispy",
@@ -102,7 +103,7 @@ export const products: Product[] = [
     category: "signature",
     price: 5000,
     description: "Pempek dari kulit ikan, dengan nama asli menu Kulit.",
-    image: PLACEHOLDER,
+    image: "/images/kulit-crispy.webp",
   },
 
   // 2. Kategori Paket Pempek
@@ -113,7 +114,7 @@ export const products: Product[] = [
     price: 100000,
     description:
       "Paket pempek campur isi 20, bisa request varian. Cocok untuk dinikmati bersama keluarga atau rame-rame.",
-    image: PLACEHOLDER,
+    image: "/images/Paket-keluarga.webp",
     featured: true,
   },
   {
@@ -124,7 +125,7 @@ export const products: Product[] = [
     price: 50000,
     description:
       "Paket pempek campur isi 10, bisa request varian. Cocok untuk berbagi bersama teman atau keluarga.",
-    image: PLACEHOLDER,
+    image: "/images/Paket-serbu.webp",
     featured: true,
   },
   {
@@ -135,7 +136,7 @@ export const products: Product[] = [
     price: 25000,
     description:
       "Paket pempek campur isi 5, bisa request varian. Cocok untuk porsi kecil atau dinikmati berdua.",
-    image: PLACEHOLDER,
+    image: "/images/pempek-mini.webp",
     featured: true,
   },
 
@@ -146,7 +147,7 @@ export const products: Product[] = [
     category: "khas-palembang",
     price: 15000,
     description: "Hidangan khas Palembang berbahan pempek.",
-    image: PLACEHOLDER,
+    image: "/images/Lenggang.webp",
     featured: true,
   },
   {
@@ -155,7 +156,7 @@ export const products: Product[] = [
     category: "khas-palembang",
     price: 15000,
     description: "Hidangan khas Palembang.",
-    image: PLACEHOLDER,
+    image: "/images/RujakMie.webp",
   },
   {
     slug: "tekwan",
@@ -163,7 +164,7 @@ export const products: Product[] = [
     category: "khas-palembang",
     price: 15000,
     description: "Hidangan khas Palembang berupa sajian berkuah.",
-    image: PLACEHOLDER,
+    image: "/images/tekwan.webp",
     featured: true,
   },
   {
@@ -172,7 +173,7 @@ export const products: Product[] = [
     category: "khas-palembang",
     price: 15000,
     description: "Hidangan khas Palembang.",
-    image: PLACEHOLDER,
+    image: "/images/Model.webp",
     featured: true,
   },
 
@@ -183,7 +184,7 @@ export const products: Product[] = [
     category: "frozen",
     price: 50000,
     description: "Pempek campur beku isi 10, bisa request varian.",
-    image: PLACEHOLDER,
+    image: "/images/paket-frozen-serbu.webp",
   },
   {
     slug: "paket-frozen-mini",
@@ -191,7 +192,7 @@ export const products: Product[] = [
     category: "frozen",
     price: 25000,
     description: "Pempek campur beku isi 5, bisa request varian.",
-    image: PLACEHOLDER,
+    image: "/images/paket-frozen-mini.webp",
   },
 ];
 

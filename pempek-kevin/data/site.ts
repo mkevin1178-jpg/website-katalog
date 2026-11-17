@@ -34,8 +34,7 @@ export const site = {
     shareUrl: "https://maps.app.goo.gl/Fkh7CjWyZTU6n7Mm7",
   },
 
-  // GANTI dengan ID video YouTube profil asli
-  youtubeId: "dQw4w9WgXcQ",
+  youtubeId: "sks_N6RW2zM",
 
   openingHours: [
     { day: "Selasa–Minggu", hours: "13.30–19.30 WIB" },
@@ -58,10 +57,11 @@ export const site = {
 
   hero: {
     eyebrow: "Homemade Since 2009",
-    titleLines: ["Pempek", "Kevin"],
+    titleLines: ["PEMPEK", "KEVIN"],
     subtitle: "Asli Ikan Tenggiri dari Bogor",
     description:
-      "Dibuat secara homemade denganepenuh hati sejak 2009, Pempek Kevin menghadirkan kelezatan pempek khas Palembang menggunakan ikan tenggiri pilihan. Berawal dari resep keluarga, setiap sajian kami hadir untuk menemani momen hangat bersama orang-orang tersayang.",
+      "Dibuat secara homemade dengan penuh hati sejak 2009, Pempek Kevin menghadirkan kelezatan pempek khas Palembang menggunakan ikan tenggiri pilihan. Berawal dari resep keluarga, setiap sajian kami hadir untuk menemani momen hangat bersama orang-orang tersayang.",
+    taglineLines: ["LEMAKK NIANN", "OYY!!"],
   },
 
   featuredSection: {
@@ -105,13 +105,13 @@ export const site = {
   footer: {
     slogan: "LEMAK NIANN OYYY",
     description:
-      "Nikmati gurihnya pempek homemade asli ikan tenggiri dengan cita rasa khas Palembang yang dibuat denganepenuh hati sejak 2009. Dari menu favorit hingga sajian untuk keluarga, Pempek Kevin hadir menemani momen kebersamaan dengan kelezatan yang bikin ingin nambah lagi.",
+      "Nikmati gurihnya pempek homemade asli ikan tenggiri dengan cita rasa khas Palembang yang dibuat dengan penuh hati sejak 2009. Dari menu favorit hingga sajian untuk keluarga, Pempek Kevin hadir menemani momen kebersamaan dengan kelezatan yang bikin ingin nambah lagi.",
     tagline: "Pempek homemade khas Palembang · Bogor · Sejak 2009",
   },
 
   // TODO: ganti dengan foto asli (cut-out transparan WebP/PNG untuk hero/dekorasi/CTA).
   assets: {
-    hero: "/images/hero-pempek.webp",
+    hero: "/images/hero-pempek.webp?v=" + Date.now(),
     heroAlt: "Aneka pempek Pempek Kevin di atas piring dengan cuko dan mentimun",
     heroDecorations: [
       "/images/hero/deco-cuka.svg",

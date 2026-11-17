@@ -52,15 +52,12 @@ export default function Navbar() {
         <nav className="flex h-16 items-center gap-2 md:gap-4">
           <Link href="/" className="flex shrink-0 items-center gap-2 py-1">
             <Image
-              src="/images/logo-pempek-kevin.webp"
+              src="/images/Logo_Horizontal.webp"
               alt={`Logo ${site.name}`}
-              width={40}
-              height={40}
-              className="h-9 w-9"
+              width={144}
+              height={35}
+              className="h-9 w-auto"
             />
-            <span className="heading-impact text-base tracking-wide text-brand-red">
-              {site.name}
-            </span>
           </Link>
 
           <ul className="hidden flex-1 items-center justify-center gap-1 md:flex">

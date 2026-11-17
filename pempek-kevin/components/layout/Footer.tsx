@@ -25,9 +25,9 @@ export default function Footer() {
               <Image
                 src="/images/logo-pempek-kevin.webp"
                 alt={`Logo ${site.name}`}
-                width={40}
-                height={40}
-                className="h-10 w-10"
+                width={48}
+                height={48}
+                className="h-12 w-12"
               />
               <span className="font-display text-lg font-bold">{site.name}</span>
             </Link>

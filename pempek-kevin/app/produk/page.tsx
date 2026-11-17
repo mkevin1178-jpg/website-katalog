@@ -36,15 +36,15 @@ export default function ProdukPage({
         title="Temukan Pempek Favoritmu!"
         description={
           <>
-            <span className="block">
+            <p>
               Mau menikmati pempek sendiri atau bersama keluarga? Temukan beragam
               pilihan pempek khas Palembang untuk setiap momen.
-            </span>
-            <span className="block mt-3">
+            </p>
+            <p className="mt-3">
               Mulai dari pempek signature, paket keluarga, kuliner khas Palembang,
               hingga frozen food. Pilih favoritmu dan pesan dengan mudah melalui
               WhatsApp.
-            </span>
+            </p>
           </>
         }
       />
